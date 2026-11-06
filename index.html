@@ -286,9 +286,9 @@ $("#saveContact").addEventListener("click",async()=>{
   if(CONFIG.mobile)V.push(`TEL;TYPE=CELL:${CONFIG.mobile.replace(/\s/g,"").replace(/^0/,"+33")}`);
   if(CONFIG.email)V.push(`EMAIL;TYPE=WORK:${CONFIG.email}`);
   if(CONFIG.site)V.push(`URL:${CONFIG.site}`);
-  if(CONFIG.instagram)V.push(`X-SOCIALPROFILE;TYPE=instagram:${CONFIG.instagram}`);
-  if(CONFIG.tiktok)V.push(`X-SOCIALPROFILE;TYPE=tiktok:${CONFIG.tiktok}`);
-  if(CONFIG.snapchat)V.push(`X-SOCIALPROFILE;TYPE=snapchat:${CONFIG.snapchat}`);
+  if(CONFIG.instagram)V.push(`X-SOCIALPROFILE;type=instagram;x-user=craftcom_:${CONFIG.instagram}`);
+  if(CONFIG.tiktok)V.push(`X-SOCIALPROFILE;type=tiktok;x-user=craftcom_:${CONFIG.tiktok}`);
+  if(CONFIG.snapchat)V.push(`X-SOCIALPROFILE;type=snapchat;x-user=wacilrs:${CONFIG.snapchat}`);
   const p=await photoB64(); if(p)V.push(`PHOTO;ENCODING=b;TYPE=JPEG:${p}`);
   V.push("END:VCARD");
   const url=URL.createObjectURL(new Blob([V.join("\r\n")],{type:"text/vcard;charset=utf-8"}));
