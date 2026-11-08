@@ -154,7 +154,7 @@ footer img{display:block;width:96px;height:auto;margin-bottom:12px;opacity:.9}
 
   <div class="ident">
     <p class="kick">Agence de communication 360°</p>
-    <h1 id="name">Wacil Craft Com</h1>
+    <h1 id="name">Wacil<br>Craft Com</h1>
     <p class="role" id="role"><strong>Fondateur</strong></p>
     <p class="pitch">On donne à votre marque <span>l'image qu'elle mérite</span>.</p>
   </div>
@@ -246,7 +246,7 @@ const $ = s => document.querySelector(s);
 const telHref = n => "tel:" + n.replace(/[^\d+]/g,"").replace(/^0/,"+33");
 const fullName = () => [CONFIG.prenom, CONFIG.nom].filter(Boolean).join(" ");
 
-$("#name").textContent = fullName();
+{const h=$("#name");h.textContent=CONFIG.prenom;h.appendChild(document.createElement("br"));h.appendChild(document.createTextNode(CONFIG.nom));}
 const waBase = "https://wa.me/" + CONFIG.whatsapp.replace(/\D/g,"");
 $("#quoteBtn").href = waBase + "?text=" + encodeURIComponent(CONFIG.messageDevis);
 
